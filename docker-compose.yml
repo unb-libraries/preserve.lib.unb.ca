@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  preserve.lib.unb.ca:
+    build: .
+    ports:
+      - "3091:8080"
