@@ -1,0 +1,15 @@
+{% include 'lib-head.html' %}
+
+<h2>Wayback Error</h2>
+<b>{{ err_msg }}</b>
+
+{% if err_details %}
+<p>Error Details:</p>
+<p>
+<pre>
+{{ err_details }}
+</pre>
+</p>
+{% endif %}
+
+{% include 'lib-foot.html' %}

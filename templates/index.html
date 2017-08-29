@@ -1,0 +1,44 @@
+{% include 'lib-head.html' %}
+
+<h1>UNB Libraries Project Preservation</h1>
+
+<p>For nearly two decades, UNB Libraries has partnered with researchers at UNB and beyond to develop innovative projects in digital scholarship. Although not intended as a permanent archive, this space provides access to selected projects that were developed at UNB Libraries but are no longer being actively updated or maintained.</p>
+<p>Each project has been captured as a dated 'snapshot', after which no further changes have been made. While every effort has been made to preserve access to content, not all functionality is preserved: external links, forms, and search may not work as expected.</p>
+<p>Questions or comments on individual projects can be addressed to the project contact. For more information about project preservation, please <a href="/libmail/contactform.php?email=jmackenz&subject=Preservation%20Projects">contact James MacKenzie</a> (Associate Director of Libraries for Academic and Scholarly Technologies).</p>
+
+<h2>Current Projects Within Preservation</h2>
+
+<dl>
+	<dt><a href="/wayback/20141205151334/http://atlanticportal.hil.unb.ca/">Atlantic Canada Portal</a></dt>
+	<dd><strong>Web archive date:</strong> Dec. 5, 2014</dd>
+	<dd>The Atlantic Canada Portal was in active development from 2002-2010 as a collaborative effort between the University of New Brunswick's Electronic Text Centre (now the Centre for Digital Scholarship) and Dr. Marg Conrad (Canada Research Chair in Atlantic Canada Studies) to promote the study of Canada's Atlantic provinces. Content includes an extensive bibliography and six virtual archives of primary source material.</dd>
+	<dd><strong>Atlantic Canada Virtual Archives (ACVA)</strong> sites include:
+		<ul>
+			<li><a href="/wayback/20141205151514/http://atlanticportal.hil.unb.ca/acva/blackloyalists/">Black Loyalists in New Brunswick, 1783-1854</a></li>
+			<li><a href="/wayback/20141205151515/http://atlanticportal.hil.unb.ca/acva/contestedterrain/">Contested Terrain: Aboriginal Land Petitions in New Brunswick, 1786-1878</a></li>
+			<li><a href="/wayback/20141205151515/http://atlanticportal.hil.unb.ca/acva/macdonald/">MacDonald Family Letters, 1779-1801</a></li>
+			<li><a href="/wayback/20141205151516/http://atlanticportal.hil.unb.ca/acva/loyalistwomen/">Loyalist Women in New Brunswick, 1783-1827</a></li>
+			<li><a href="/wayback/20141205151347/http://atlanticportal.hil.unb.ca/acva/en/mcqueen/">The McQueen Family Letters, 1866-1930</a></li>
+			<li><a href="/wayback/20141205151519/http://atlanticportal.hil.unb.ca/acva/en/winslow/">The Edward Winslow Letters, 1783-1785</a></li>
+		</ul>
+	</dd>
+	<dd><strong>Project Contact:</strong> <a href="mailto:elizabeth.mancke@unb.ca">Dr. Elizabeth Mancke</a></dd>
+</dl>
+
+<!--
+<p>This archive contains the following collections:</p>
+<ul>
+{% for route in routes %}
+  {% if route | is_wb_handler %}
+    <li>
+    <a href="{{ '/' + route.path }}">{{ '/' + route.path }}</a>
+    {% if route.user_metadata.title is defined %}
+    ({{ route.user_metadata.title }})
+    {% endif %}
+    </li>
+  {% endif %}
+{% endfor %}
+</ul>
+-->
+
+{% include 'lib-foot.html' %}

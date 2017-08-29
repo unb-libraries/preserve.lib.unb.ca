@@ -8,6 +8,8 @@ RUN apk add --update \
     && pip install cffi pywb \
     && mkdir /app
 
+COPY ./templates /app/templates
+
 WORKDIR /app
 
 CMD ["wayback"]
