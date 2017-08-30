@@ -9,12 +9,10 @@ RUN apk add --update \
     && mkdir /app
 
 COPY ./templates /app/templates
-
 COPY ./scripts /scripts
 
-RUN cp ./scripts/sync-hours.sh /etc/periodic/15min/sync-hours \
-    && /etc/periodic/15min/sync-hours
+RUN cp ./scripts/sync-hours.sh /etc/periodic/15min/sync-hours
 
 WORKDIR /app
 
-CMD ["wayback"]
+CMD ["/scripts/run.sh"]
