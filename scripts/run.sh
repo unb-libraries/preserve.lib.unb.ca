@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 crond
 cd /app
-/etc/periodic/15min/sync-hours
+/etc/periodic/15min/sync-header
 wayback

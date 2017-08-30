@@ -11,7 +11,7 @@ RUN apk add --update \
 COPY ./templates /app/templates
 COPY ./scripts /scripts
 
-RUN cp ./scripts/sync-hours.sh /etc/periodic/15min/sync-hours
+RUN cp ./scripts/sync-header.sh /etc/periodic/15min/sync-header
 
 WORKDIR /app
 
