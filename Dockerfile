@@ -5,6 +5,7 @@ RUN apk add --update \
     build-base \
     python-dev \
     curl \
+    openssl-dev \
     && pip install cffi pywb \
     && mkdir /app
 
