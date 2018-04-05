@@ -1,3 +1,3 @@
-cffi
-pywb
+cffi == 1.11.5
+pywb == 2.0.3
 pur
