@@ -3,13 +3,14 @@ FROM python:3.6-alpine
 COPY ./app /app
 WORKDIR /app
 
-RUN apk add --update \
+RUN apk add --no-cache curl
+RUN apk add --no-cache --virtual build-dependencies \
     libffi-dev \
     build-base \
     python-dev \
-    curl \
     openssl-dev \
-    && pip install -r requirements.txt
+    && pip install -r requirements.txt \
+    && apk del build-dependencies
 
 COPY ./scripts /scripts
 
