@@ -1,7 +1,13 @@
-version: '2'
+version: '3.6'
 
 services:
   preserve.lib.unb.ca:
     build: .
     ports:
       - "3091:8080"
+    networks:
+      - preserve.lib.unb.ca
+
+networks:
+  preserve.lib.unb.ca:
+    name: preserve.lib.unb.ca
