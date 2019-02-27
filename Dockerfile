@@ -3,7 +3,7 @@ FROM python:3.6-alpine
 COPY ./app /app
 WORKDIR /app
 
-RUN apk add --no-cache curl libssl1.0
+RUN apk add --no-cache curl libssl1.1
 RUN apk add --no-cache --virtual build-dependencies \
     libffi-dev \
     build-base \
