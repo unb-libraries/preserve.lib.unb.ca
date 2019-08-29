@@ -13,6 +13,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY ./scripts /scripts
 
-RUN echo '*/15 * * * * /scripts/sync-header.sh' > /etc/cron.d/header
+RUN echo '*/15 * * * * root /scripts/sync-header.sh' > /etc/cron.d/header && service cron start
 
 CMD ["/scripts/run.sh"]
