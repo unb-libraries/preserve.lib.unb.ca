@@ -1,0 +1,8 @@
+dockworker:
+  version: 1.0
+  instance:
+    project_prefix: PRESERVE
+    name: preserve.lib.unb.ca
+    upstream_image:
+      - python:3.7-slim
+  options:
