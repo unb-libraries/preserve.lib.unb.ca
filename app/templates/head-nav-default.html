@@ -4,6 +4,8 @@
     <!--li class="skip skipSidebar"><a href="#sidebar">Skip to sidebar</a></li-->
   </ul>
   
+  <div id="emergency-banner" data-alerts-container></div>
+
     <div class="darkbkgd" id="wrapper">
     <div class="container">
       <div class="row">
@@ -257,16 +259,35 @@
     </nav>
 
     <div class="row" id="image-hours">
-      <div class="col-md-offset-8 col-md-4 col-sm-offset-6 col-sm-6 col-xs-12" id="hours">
-      <p>Today's Hours</p>
-        <ul class="">
-            <li><a href="//lib.unb.ca/about/harrietirving.php">Harriet Irving Hours</a></li>
-      <li><a href="//lib.unb.ca/about/science.php">Science &amp; Forestry Hours</a></li>
-      <li><a href="//lib.unb.ca/about/engineering.php">Engineering &amp; CS Hours</a></li>
-      <li><a href="//lib.unb.ca/about/saintjohn.php">Saint John Hours</a></li>
-      <li><a href="http://www.unb.ca/fredericton/law/library/">Law Hours</a></li>
-      <li><a href="//lib.unb.ca/about/hours.php"><i class="fa fa-clock-o fa-wh"></i> Complete Hours</a></li>
-      </ul>
+      <div class="col-md-offset-8 col-md-4 col-sm-offset-6 col-sm-6 col-xs-12" id="banner-hours">
+        <table>
+          <caption>
+            <span class="sr-only">Library hours for</span><span class="current-date"><?php print date('l, F j, Y'); ?></span>:
+          </caption>
+          <tr>
+            <th scope="row"><a href="https://lib.unb.ca/about/harriet-irving-library">Harriet Irving</a></th>
+            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hil" data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="https://lib.unb.ca/about/science-forestry-library">Science &amp; Forestry</a></th>
+            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="sfl" data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="https://lib.unb.ca/about/engineering-computer-science-library">Engineering &amp; CS</a></th>
+            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="ecsl" data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="https://lib.unb.ca/about/hans-w-klohn-commons">Saint John</a></th>
+            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hwkc" data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="https://www.unb.ca/fredericton/law/library">Law</a></th>
+            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="law" data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="https://lib.unb.ca/about/hours"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Complete Hours</a></td>
+          </tr>
+        </table>
       </div>
     </div>
 
