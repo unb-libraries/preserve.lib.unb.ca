@@ -1,8 +1,17 @@
 dockworker:
-  version: 1.0
-  instance:
-    project_prefix: PRESERVE
+  version: '3.0'
+  application:
     name: preserve.lib.unb.ca
-    upstream_image:
+    deployment:
+      repository: dockercloud
+      image:
+        name: unblibraries/preserve.lib.unb.ca
+      environments:
+        - prod
+    finish_marker: 'Starting Gevent Server'
+    github:
+      repo: preserve.lib.unb.ca
+      owner: unb-libraries
+    project_prefix: PRESERVE
+    upstream_images:
       - python:3.7-slim
-  options:

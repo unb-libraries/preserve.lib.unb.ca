@@ -15,4 +15,21 @@ COPY ./scripts /scripts
 
 RUN echo '*/15 * * * * root /scripts/sync-header.sh' > /etc/cron.d/header && service cron start
 
+# Metadata
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+LABEL ca.unb.lib.generator="pywb" \
+      com.microscaling.docker.dockerfile="/Dockerfile" \
+      com.microscaling.license="MIT" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.description="preserve.lib.unb.ca serves and archives legacy websites that have been created or hosted by UNB Libraries." \
+      org.label-schema.name="preserve.lib.unb.ca" \
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.url="https://preserve.lib.unb.ca" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/unb-libraries/preserve.lib.unb.ca" \
+      org.label-schema.vendor="UNB Libraries" \
+      org.label-schema.version=$VERSION
+
 CMD ["/scripts/run.sh"]
