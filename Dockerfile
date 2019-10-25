@@ -29,7 +29,7 @@ LABEL ca.unb.lib.generator="pywb" \
       org.label-schema.url="https://preserve.lib.unb.ca" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/unb-libraries/preserve.lib.unb.ca" \
-      org.label-schema.vendor="UNB Libraries" \
+      org.label-schema.vendor="University of New Brunswick Libraries" \
       org.label-schema.version=$VERSION
 
 CMD ["/scripts/run.sh"]
