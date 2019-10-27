@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY ./scripts /scripts
 
-RUN echo '*/15 * * * * root /scripts/sync-header.sh' > /etc/cron.d/header && service cron start
+RUN echo '*/15 * * * * root /scripts/sync-header.sh' > /etc/cron.d/header
 
 # Metadata
 ARG BUILD_DATE
@@ -32,4 +32,4 @@ LABEL ca.unb.lib.generator="pywb" \
       org.label-schema.vendor="University of New Brunswick Libraries" \
       org.label-schema.version=$VERSION
 
-CMD ["/scripts/run.sh"]
+CMD cron && "/scripts/run.sh"
