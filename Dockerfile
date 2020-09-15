@@ -1,6 +1,6 @@
 FROM python:3.7-slim
 
-COPY ./app /app
+COPY build/app /app
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && pip install -r requirements.txt \
     && apt-get purge --auto-remove -y build-essential python3-dev
 
-COPY ./scripts /scripts
+COPY build/scripts /scripts
 
 RUN echo '*/15 * * * * root /scripts/sync-header.sh' > /etc/cron.d/header
 

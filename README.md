@@ -1,4 +1,4 @@
-![preserve.lib.unb.ca screenshot](https://github.com/unb-libraries/preserve.lib.unb.ca/raw/prod/screenshot.png "preserve.preserve.lib.unb.ca screenshot")
+![preserve.lib.unb.ca screenshot](https://github.com/unb-libraries/preserve.lib.unb.ca/raw/prod/.dockworker/screenshot.png "preserve.preserve.lib.unb.ca screenshot")
 # [preserve.lib.unb.ca](https://preserve.lib.unb.ca) : Instance Repository
 [![Build Status](https://travis-ci.com/unb-libraries/preserve.lib.unb.ca.svg?branch=prod)](https://travis-ci.com/unb-libraries/preserve.lib.unb.ca) [![GitHub license](https://img.shields.io/github/license/unb-libraries/preserve.lib.unb.ca)](https://github.com/unb-libraries/preserve.lib.unb.ca/blob/dev/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/preserve.lib.unb.ca)
 
