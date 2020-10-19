@@ -5,7 +5,7 @@ dockworker:
     finish_marker: 'Starting Gevent Server'
     project_prefix: PRESERVE
     upstream_images:
-      - python:3.7-slim
+      - python:3.9-slim
   deployment:
     environments:
       - prod
