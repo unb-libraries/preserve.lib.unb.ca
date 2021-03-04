@@ -15,6 +15,6 @@ dockworker:
   image:
     push_branches:
       - prod
-    name: unblibraries/preserve.lib.unb.ca
+    name: ghcr.io/unb-libraries/preserve.lib.unb.ca
     date_tag_image: true
     repository: dockercloud
