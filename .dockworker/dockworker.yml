@@ -17,4 +17,4 @@ dockworker:
       - prod
     name: ghcr.io/unb-libraries/preserve.lib.unb.ca
     date_tag_image: true
-    repository: dockercloud
+    repository: ghcr
