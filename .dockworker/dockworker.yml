@@ -6,7 +6,7 @@ dockworker:
     project_prefix: PRESERVE
     upstream_images:
       - python:3.9-slim
-    uuid: 3501
+    uuid: 3091
   deployment:
     environments:
       - prod
