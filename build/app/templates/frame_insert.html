@@ -26,18 +26,17 @@ html, body
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
-<script src='{{ host_prefix }}/{{ static_path }}/wb_frame.js'> </script>
+<script src='{{ static_prefix }}/wb_frame.js'> </script>
 
 {% autoescape false %}
 
 {{ banner_html }}
 
-{% endautoescape %}
-
 </head>
 <body style="margin: 0px; padding: 0px;">
+
 <div id="wb_iframe_div">
-<iframe id="replay_iframe" frameborder="0" seamless="seamless" scrolling="yes" class="wb_iframe"></iframe>
+<iframe id="replay_iframe" frameborder="0" seamless="seamless" scrolling="yes" class="wb_iframe" allow="autoplay; fullscreen"></iframe>
 </div>
 <script>
   var cframe = new ContentFrame({"url": "{{ url }}" + window.location.hash,
@@ -48,3 +47,4 @@ html, body
 </script>
 </body>
 </html>
+{% endautoescape %}
