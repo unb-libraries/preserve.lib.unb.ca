@@ -13,7 +13,7 @@ describe('Preserve', {baseUrl: host, groups: ['sites']}, () => {
   context('The Winslows', {baseUrl: winslowUrl}, () => {
     specify('Title should contain "The Winslows"', () => {
       cy.visit(winslowUrl)
-      cy.get('#title_or_url')
+      cy.get('#second-navbar')
         .should('contain', 'The Winslows')
     })
   })
