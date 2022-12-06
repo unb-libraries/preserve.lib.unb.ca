@@ -9,6 +9,7 @@ services:
     networks:
       - preserve.lib.unb.ca
     restart: unless-stopped
+    depends_on: []
 networks:
   preserve.lib.unb.ca:
     name: preserve.lib.unb.ca
