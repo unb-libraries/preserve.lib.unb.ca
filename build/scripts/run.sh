@@ -9,4 +9,4 @@ done
 
 cd /app
 /scripts/sync-header.sh
-wayback
+wayback 2>&1
