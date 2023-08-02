@@ -27,7 +27,7 @@ spec:
         uri: preserve.lib.unb.ca
     spec:
       nodeSelector:
-        deployenv: prod
+        deploy_prod: 'true'
       containers:
         -
           env:
