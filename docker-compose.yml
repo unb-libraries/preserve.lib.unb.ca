@@ -1,9 +1,9 @@
 services:
-  preserve.lib.unb.ca:
+  preserve-lib-unb-ca:
     build: .
     env_file:
       - ./env/preserve.env
-    container_name: preserve.lib.unb.ca
+    container_name: preserve-lib-unb-ca
     ports:
       - "3091:8080"
     networks:

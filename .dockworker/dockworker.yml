@@ -1,24 +1,53 @@
 dockworker:
-  version: '3.0'
+  version: '6'
   application:
-    name: preserve.lib.unb.ca
-    finish_marker: 'Starting Gevent Server'
-    project_prefix: PRESERVE
-    upstream_images:
-      - python:3.9-slim
-    uuid: 3091
-  deployment:
-    environments:
+    name: UNB Libraries Wayback
+    uri: https://preserve.lib.unb.ca
+    description: >
+      Wayback machine for UNB Libraries projects.
+    topics:
+     - wayback
+     - preservation
+     - archives
+    identifiers:
+      id: preserve.lib.unb.ca
+      slug: preserve-lib-unb-ca
+      short_slug: preservelib
+      uuid: 3091
+    framework:
+      name: pywb
+      version: 2
+      startup_finished_marker: 'Starting Gevent Server'
+      endpoint:
+        name: http
+        port: 8080
+        readiness_timeout: 15
+    license:
+      license: MIT
+      holder: University of New Brunswick Libraries
+    shell:
+      path: /bin/sh
+  endpoints:
+    env:
+      - dev
       - prod
-    workflow:
-      source: dockworker
-      type: deployment-workflow
-  github:
-    repo: preserve.lib.unb.ca
-    owner: unb-libraries
-  image:
-    push_branches:
-      - prod
-    name: ghcr.io/unb-libraries/preserve.lib.unb.ca
-    date_tag_image: true
-    repository: ghcr
+    deployments:
+      preserve-lib-unb-ca:
+        default: true
+        managed: true
+        name: preserve-lib-unb-ca
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: preserve.lib.unb.ca
+    jira:
+      project_keys:
+        - PRESERVE
+    image:
+      name: ghcr.io/unb-libraries/preserve.lib.unb.ca
+      parent: python:3.9-slim
+      repository: GitHub
+      push-branches:
+        - dev
+        - prod
