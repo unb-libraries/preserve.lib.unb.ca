@@ -1,0 +1,95 @@
+name: Update Python Requirements
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 5 * * 1,4'
+
+jobs:
+  update-requirements:
+    name: Check for Requirements Updates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install pur
+        run: pip install pur
+
+      - name: Snapshot current requirements
+        run: cp build/app/requirements.txt /tmp/requirements.before.txt
+
+      - name: Update requirements.txt
+        run: pur -r build/app/requirements.txt
+
+      - name: Generate update table
+        run: |
+          python3 - <<'EOF'
+          import re
+
+          def parse(path):
+              pkgs = {}
+              with open(path) as f:
+                  for line in f:
+                      line = line.strip()
+                      if not line or line.startswith('#'):
+                          continue
+                      m = re.match(r'^([A-Za-z0-9_.\-]+)\s*==\s*([A-Za-z0-9_.\-]+)', line)
+                      if m:
+                          pkgs[m.group(1)] = m.group(2)
+              return pkgs
+
+          before = parse('/tmp/requirements.before.txt')
+          after = parse('build/app/requirements.txt')
+
+          rows = sorted(
+              pkg for pkg in set(before) | set(after)
+              if before.get(pkg) != after.get(pkg)
+          )
+
+          intro = (
+              "Auto-generated update of Python dependencies in "
+              "`build/app/requirements.txt`, checked via "
+              "[pur](https://github.com/alanhamlett/pip-update-requirements).\n\n"
+          )
+
+          if rows:
+              table = "| Package | From | To |\n| --- | --- | --- |\n"
+              for pkg in rows:
+                  old = before.get(pkg, '-')
+                  new = after.get(pkg, '-')
+                  table += f"| [{pkg}](https://pypi.org/project/{pkg}/) | {old} | {new} |\n"
+          else:
+              table = "_No updates available._\n"
+
+          body = (
+              intro
+              + table
+              + "\nPlease confirm the pywb container still builds and deploys correctly before merging.\n"
+          )
+
+          with open('pr_body.md', 'w') as f:
+              f.write(body)
+          print(body)
+          EOF
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.UNBLIBBOT_PAT_TOKEN }}
+          commit-message: Update Python requirements
+          committer: UNB Libraries CodeBot <libsystems@unb.ca>
+          author: UNB Libraries CodeBot <libsystems@unb.ca>
+          signoff: false
+          branch: requirements-updates
+          add-paths: build/app/requirements.txt
+          delete-branch: true
+          title: 'Update Python Requirements'
+          body-path: pr_body.md
+          labels: |
+            automated
+            dependencies
+          draft: false
